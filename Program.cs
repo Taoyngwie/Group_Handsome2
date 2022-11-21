@@ -6,24 +6,23 @@ enum MenuII {
 }
 class Program {
     static RegisterInfoList registerList;
-    public static void main(string[] args) {
+    static Queue<string> BM_BKT07_30 = new Queue<string>();
+    static Queue<string> BM_BKT08_00 = new Queue<string>();
+    static Queue<string> BM_BKT08_15 = new Queue<string>();
+    static Queue<string> BM_BKT08_30 = new Queue<string>();
+    static Queue<string> BM_BKT12_00 = new Queue<string>();
+    static Queue<string> BM_BKT14_00 = new Queue<string>();
+    static Queue<string> BM_BKT16_00 = new Queue<string>();
 
-    Queue<string> BM_BKT07_30 = new Queue<string>();
-    Queue<string> BM_BKT08_00 = new Queue<string>();
-    Queue<string> BM_BKT08_15 = new Queue<string>();
-    Queue<string> BM_BKT08_30 = new Queue<string>();
-    Queue<string> BM_BKT12_00 = new Queue<string>();
-    Queue<string> BM_BKT14_00 = new Queue<string>();
-    Queue<string> BM_BKT16_00 = new Queue<string>();
-
-    Queue<string> BKT_BM07_00 = new Queue<string>();
-    Queue<string> BKT_BM10_00 = new Queue<string>();
-    Queue<string> BKT_BM13_00 = new Queue<string>();
-    Queue<string> BKT_BM15_00 = new Queue<string>();
-    Queue<string> BKT_BM16_30 = new Queue<string>();
-    Queue<string> BKT_BM17_00 = new Queue<string>();
-    Queue<string> BKT_BM17_30 = new Queue<string>();
-    Queue<string> BKT_BM18_30 = new Queue<string>();
+    static Queue<string> BKT_BM07_00 = new Queue<string>();
+    static Queue<string> BKT_BM10_00 = new Queue<string>();
+    static Queue<string> BKT_BM13_00 = new Queue<string>();
+    static Queue<string> BKT_BM15_00 = new Queue<string>();
+    static Queue<string> BKT_BM16_30 = new Queue<string>();
+    static Queue<string> BKT_BM17_00 = new Queue<string>();
+    static Queue<string> BKT_BM17_30 = new Queue<string>();
+    static Queue<string> BKT_BM18_30 = new Queue<string>();
+    public static void Main(string[] args) {
 
         while(true) {
 
@@ -34,8 +33,9 @@ class Program {
             CalculateTime(text, BM_BKT07_30, BM_BKT08_00, BM_BKT08_15, BM_BKT08_30, BM_BKT12_00, BM_BKT14_00
             , BM_BKT16_00, BKT_BM07_00, BKT_BM10_00, BKT_BM13_00, BKT_BM15_00, BKT_BM16_30, BKT_BM17_00
             , BKT_BM17_30, BKT_BM18_30);
+
             PrepareRegisterListWhenProgramIsLoad();
-            PrintMenuScreen();
+            PrintMenuScreen(null);
             
         }
         
@@ -150,12 +150,12 @@ class Program {
             }
         }
     }
-    static void PrintMenuScreen()
+    static void PrintMenuScreen(Info login)
     {
         Console.Clear();
 
         PrintFirstListMenu();
-        InputMenuFromKeyboard();
+        InputMenuFromKeyboard(login);
     }
 
     static void PrintFirstListMenu()
@@ -179,7 +179,7 @@ class Program {
         Console.WriteLine("*******************************************************");
     }
 
-    static void InputMenuFromKeyboard()
+    static void InputMenuFromKeyboard(Info login)
     {
         Console.Write("Please Input Menu: ");
         Menu menu = (Menu)(int.Parse(Console.ReadLine())); 
@@ -187,12 +187,12 @@ class Program {
         PresentMenu(menu);
     }
 
-    static void InputMenuIIFromKeyboard()
+    static void InputMenuIIFromKeyboard(Info login)
     {
         Console.Write("Please Input Menu: ");
         MenuII menuII = (MenuII)(int.Parse(Console.ReadLine())); 
 
-        PresentMenu(menuII);
+        PresentMenu(menuII, login);
     }
 
     static void PresentMenu(Menu menu)
@@ -212,7 +212,7 @@ class Program {
         }
     }
 
-     static void PresentMenu(MenuII menuII)
+     static void PresentMenu(MenuII menuII, Info login)
     {
         switch (menuII)
         {
@@ -222,9 +222,13 @@ class Program {
 
             case MenuII.BangModToBangKhunTien:
                 Logout();
+                string TimeCheckBM = ShowTimeBM_BKT();
+                AddQueue(TimeCheckBM, login);
                 break;
 
             case MenuII.BangKhunTienToBangMod:
+                string TimeCheckBKT = showTimeBKT_BM();
+                AddQueue(TimeCheckBKT, login);
                 Logout();
                 break;
 
@@ -237,7 +241,130 @@ class Program {
                 break;
         }
     }
+    public static void AddQueue(string TimeCheck, Info login) {
+        switch (TimeCheck) {
+            case "07:30" :
+                Program.BM_BKT07_30.Push(login.GetFullName());
+                break;
+            case "08:00" :
+                Program.BM_BKT08_00.Push(login.GetFullName());
+                break;
+            case "08:15" :
+                Program.BM_BKT08_15.Push(login.GetFullName());
+                break;
+            case "08:30" :
+                Program.BM_BKT08_30.Push(login.GetFullName());
+                break;
+            case "12:00" :
+                Program.BM_BKT12_00.Push(login.GetFullName());
+                break;
+            case "14:00" :
+                Program.BM_BKT14_00.Push(login.GetFullName());
+                break;
+            case "16:00" :
+                Program.BM_BKT16_00.Push(login.GetFullName());
+                break;
+            case "07:00" :
+                Program.BKT_BM07_00.Push(login.GetFullName());
+                break;
+            case "10:00" :
+                Program.BKT_BM10_00.Push(login.GetFullName());
+                break;
+            case "13:00" :
+                Program.BKT_BM13_00.Push(login.GetFullName());
+                break;
+            case "15:00" :
+                Program.BKT_BM15_00.Push(login.GetFullName());
+                break;
+            case "16:30" :
+                Program.BKT_BM16_30.Push(login.GetFullName());
+                break;
+            case "17:00" :
+                Program.BKT_BM17_00.Push(login.GetFullName());
+                break;
+            case "17:30" :
+                Program.BKT_BM17_30.Push(login.GetFullName());
+                break;
+            case "18:30" :
+                Program.BKT_BM18_30.Push(login.GetFullName());
+                break;
+        }
+    }
+    public static string ShowTimeBM_BKT()
+    {   
+        Console.Clear();
+        Console.WriteLine("*********| Select time to go |*********");
+        Console.WriteLine("1. 07:30");
+        Console.WriteLine("2. 08:00");
+        Console.WriteLine("3. 08:15");
+        Console.WriteLine("4. 08:30");
+        Console.WriteLine("5. 12:00");
+        Console.WriteLine("6. 14:00");
+        Console.WriteLine("7. 16:00");
 
+        int i = int.Parse(Console.ReadLine());
+        if(i == 1) {
+            return "07:30";
+        }
+        else if(i == 2) {
+            return "08.00";
+        }
+        else if(i == 3) {
+            return "08:15";
+        }
+        else if(i == 4) {
+            return "08:30";
+        }
+        else if(i == 5) {
+            return "12:00";
+        }
+        else if(i == 6) {
+            return "14:00";
+        }
+        else if(i == 7) {
+            return "16:00";
+        }
+        else return null;
+    }
+    public static string showTimeBKT_BM()
+    {   
+        Console.Clear();
+        Console.WriteLine("*********| Select time to go |*********");
+        Console.WriteLine("1. 07:00");
+        Console.WriteLine("2. 10:00");
+        Console.WriteLine("3. 13:00");
+        Console.WriteLine("4. 15:00");
+        Console.WriteLine("5. 16:30");
+        Console.WriteLine("6. 17:00");
+        Console.WriteLine("7. 17:30");
+        Console.WriteLine("8. 18:00");
+        int i = int.Parse(Console.ReadLine());
+        if(i == 1) {
+            return "07:00";
+        }
+        else if(i == 2) {
+            return "10:00";
+        }
+        else if(i == 3) {
+            return "13:00";
+        }
+        else if(i == 4) {
+            return "15:00";
+        } 
+        else if(i == 5) {
+            return "16:30";
+        } 
+        else if(i == 6) {
+            return "17:00";
+        } 
+        else if(i == 7) {
+            return "17:30";
+        } 
+        else if(i == 8) {
+            return "18:30";
+        }
+        else return null;
+    }
      static void ShowInputRegister()
     {
         Console.Clear();
@@ -294,7 +421,7 @@ class Program {
 
         if(mail == "exit")
         {
-            PrintMenuScreen();
+            PrintMenuScreen(null);
         }
         else if(Program.registerList.CheckLogin(mail, pass))
         {
@@ -316,14 +443,14 @@ class Program {
     {
         Console.Clear();
         PrintFirstListMenu();
-        InputMenuFromKeyboard();
+        InputMenuFromKeyboard(null);
     }
 
     static void BlackToMenuII()
     {
         Console.Clear();
         PrintSecondListMenu();
-        InputMenuIIFromKeyboard();
+        InputMenuIIFromKeyboard(null);
     }
 
      static void PrepareRegisterListWhenProgramIsLoad()
@@ -367,38 +494,31 @@ class Program {
     }
 
     static string InputTitle()
-    {
-        Console.WriteLine("Input Your Title Name");
+    {   
         Console.WriteLine("1.Mr.");
         Console.WriteLine("2.Mrs.");
         Console.WriteLine("3.Miss.");
-        for(int i = 0; i  <= 0;)
-            {
-                int s = int.Parse(Console.ReadLine());
-                if (s == 1)
-                {
-                    return  "Mr.";
-                    i++;
-                }
+        Console.Write("Input Your Title Name : ");
+        int s = int.Parse(Console.ReadLine());
+        if (s == 1)
+        {
+            return  "Mr.";
+        }
 
-                else if (s == 2)
-                {
-                    return "Mrs.";
-                    i++;
-                }
+        else if (s == 2)
+        {
+            return "Mrs.";
+        }
 
-                else if (s == 3)
-                {
-                    return "Miss.";
-                    i++;
-                }
-
-                else
-                {
-                    Console.WriteLine("Please Enter only 1-3 :");             
-                }
-            }
-            return null;
+        else if (s == 3)
+        {
+            return "Miss.";
+        }
+        else
+        {
+            Console.WriteLine("Please Enter only 1-3 :");
+            return null;             
+        }
     }
     public static void TimeCheck() { //รับค่า Person login
         
