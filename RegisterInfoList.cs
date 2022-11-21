@@ -8,6 +8,7 @@ class RegisterInfoList
     {
         this.registerInfoList = new List<Info>();
     }
+    public Info CurrentLogin { get; set; }
 
     public void AddNewPerson(Info info)
     {
@@ -52,6 +53,7 @@ class RegisterInfoList
             {
                 if(teacherInfo.GetEmail() == email && teacherInfo.GetPassword() == password)
                 {
+                    CurrentLogin = teacherInfo;
                     return true;
                 }
             }
@@ -59,6 +61,7 @@ class RegisterInfoList
             {
                 if(studentInfo.GetEmail() == email && studentInfo.GetPassword() == password)
                 {
+                    CurrentLogin = studentInfo;
                     return true;
                 }
             }

@@ -6,6 +6,7 @@ enum MenuII {
 }
 class Program {
     static RegisterInfoList registerList;
+    static Info currentLogin;
     static Queue<string> BM_BKT07_30 = new Queue<string>();
     static Queue<string> BM_BKT08_00 = new Queue<string>();
     static Queue<string> BM_BKT08_15 = new Queue<string>();
@@ -24,20 +25,8 @@ class Program {
     static Queue<string> BKT_BM18_30 = new Queue<string>();
     public static void Main(string[] args) {
 
-        while(true) {
-
-            string text = DateTime.Now.ToLongTimeString();
-            Console.WriteLine(text);
-            Thread.Sleep(1000);//เรียกต่อ1วินาที
-
-            CalculateTime(text, BM_BKT07_30, BM_BKT08_00, BM_BKT08_15, BM_BKT08_30, BM_BKT12_00, BM_BKT14_00
-            , BM_BKT16_00, BKT_BM07_00, BKT_BM10_00, BKT_BM13_00, BKT_BM15_00, BKT_BM16_30, BKT_BM17_00
-            , BKT_BM17_30, BKT_BM18_30);
-
-            PrepareRegisterListWhenProgramIsLoad();
-            PrintMenuScreen(null);
-            
-        }
+        PrepareRegisterListWhenProgramIsLoad();
+        PrintMenuScreen();
         
     }
     public static void CalculateTime(string text, Queue<string> BM_BKT07_30, Queue<string> BM_BKT08_00, Queue<string> BM_BKT08_15, Queue<string> BM_BKT08_30, Queue<string> BM_BKT12_00
@@ -150,12 +139,22 @@ class Program {
             }
         }
     }
-    static void PrintMenuScreen(Info login)
+    static void PrintMenuScreen()
     {
         Console.Clear();
+        while(true) {
 
-        PrintFirstListMenu();
-        InputMenuFromKeyboard(login);
+            string text = DateTime.Now.ToLongTimeString();
+            Console.WriteLine(text);
+            Thread.Sleep(1000);//เรียกต่อ1วินาที
+
+            CalculateTime(text, BM_BKT07_30, BM_BKT08_00, BM_BKT08_15, BM_BKT08_30, BM_BKT12_00, BM_BKT14_00
+            , BM_BKT16_00, BKT_BM07_00, BKT_BM10_00, BKT_BM13_00, BKT_BM15_00, BKT_BM16_30, BKT_BM17_00
+            , BKT_BM17_30, BKT_BM18_30);
+        
+            PrintFirstListMenu();
+            InputMenuFromKeyboard();
+        }
     }
 
     static void PrintFirstListMenu()
@@ -170,6 +169,7 @@ class Program {
 
     static void PrintSecondListMenu()
     {
+        Console.WriteLine(Program.registerList.CurrentLogin.GetFullName());
         Console.WriteLine("Welcome to KMUTT Bus Booking");
         Console.WriteLine("*******************************************************");
         Console.WriteLine("1. Register");
@@ -179,7 +179,7 @@ class Program {
         Console.WriteLine("*******************************************************");
     }
 
-    static void InputMenuFromKeyboard(Info login)
+    static void InputMenuFromKeyboard()
     {
         Console.Write("Please Input Menu: ");
         Menu menu = (Menu)(int.Parse(Console.ReadLine())); 
@@ -187,12 +187,12 @@ class Program {
         PresentMenu(menu);
     }
 
-    static void InputMenuIIFromKeyboard(Info login)
+    static void InputMenuIIFromKeyboard()
     {
         Console.Write("Please Input Menu: ");
         MenuII menuII = (MenuII)(int.Parse(Console.ReadLine())); 
 
-        PresentMenu(menuII, login);
+        PresentMenu(menuII);
     }
 
     static void PresentMenu(Menu menu)
@@ -212,8 +212,9 @@ class Program {
         }
     }
 
-     static void PresentMenu(MenuII menuII, Info login)
+     static void PresentMenu(MenuII menuII)
     {
+        var login = Program.registerList.CurrentLogin;
         switch (menuII)
         {
             case MenuII.Register:
@@ -240,53 +241,54 @@ class Program {
                 BlackToMenuII();
                 break;
         }
+
     }
     public static void AddQueue(string TimeCheck, Info login) {
         switch (TimeCheck) {
             case "07:30" :
-                Program.BM_BKT07_30.Push(login.GetFullName());
+                BM_BKT07_30.Push(login.GetFullName());
                 break;
             case "08:00" :
-                Program.BM_BKT08_00.Push(login.GetFullName());
+                BM_BKT08_00.Push(login.GetFullName());
                 break;
             case "08:15" :
-                Program.BM_BKT08_15.Push(login.GetFullName());
+                BM_BKT08_15.Push(login.GetFullName());
                 break;
             case "08:30" :
-                Program.BM_BKT08_30.Push(login.GetFullName());
+                BM_BKT08_30.Push(login.GetFullName());
                 break;
             case "12:00" :
-                Program.BM_BKT12_00.Push(login.GetFullName());
+                BM_BKT12_00.Push(login.GetFullName());
                 break;
             case "14:00" :
-                Program.BM_BKT14_00.Push(login.GetFullName());
+                BM_BKT14_00.Push(login.GetFullName());
                 break;
             case "16:00" :
-                Program.BM_BKT16_00.Push(login.GetFullName());
+                BM_BKT16_00.Push(login.GetFullName());
                 break;
             case "07:00" :
-                Program.BKT_BM07_00.Push(login.GetFullName());
+                BKT_BM07_00.Push(login.GetFullName());
                 break;
             case "10:00" :
-                Program.BKT_BM10_00.Push(login.GetFullName());
+                BKT_BM10_00.Push(login.GetFullName());
                 break;
             case "13:00" :
-                Program.BKT_BM13_00.Push(login.GetFullName());
+                BKT_BM13_00.Push(login.GetFullName());
                 break;
             case "15:00" :
-                Program.BKT_BM15_00.Push(login.GetFullName());
+                BKT_BM15_00.Push(login.GetFullName());
                 break;
             case "16:30" :
-                Program.BKT_BM16_30.Push(login.GetFullName());
+                BKT_BM16_30.Push(login.GetFullName());
                 break;
             case "17:00" :
-                Program.BKT_BM17_00.Push(login.GetFullName());
+                BKT_BM17_00.Push(login.GetFullName());
                 break;
             case "17:30" :
-                Program.BKT_BM17_30.Push(login.GetFullName());
+                BKT_BM17_30.Push(login.GetFullName());
                 break;
             case "18:30" :
-                Program.BKT_BM18_30.Push(login.GetFullName());
+                BKT_BM18_30.Push(login.GetFullName());
                 break;
         }
     }
@@ -421,7 +423,7 @@ class Program {
 
         if(mail == "exit")
         {
-            PrintMenuScreen(null);
+            PrintMenuScreen();
         }
         else if(Program.registerList.CheckLogin(mail, pass))
         {
@@ -443,14 +445,14 @@ class Program {
     {
         Console.Clear();
         PrintFirstListMenu();
-        InputMenuFromKeyboard(null);
+        InputMenuFromKeyboard();
     }
 
     static void BlackToMenuII()
     {
         Console.Clear();
         PrintSecondListMenu();
-        InputMenuIIFromKeyboard(null);
+        InputMenuIIFromKeyboard();
     }
 
      static void PrepareRegisterListWhenProgramIsLoad()
