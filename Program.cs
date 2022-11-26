@@ -39,11 +39,17 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM07_00.Get(Number));
                 BKT_BM07_00.Pop();
             }
+            for(int Number = 0; Number <= BKT_BM07_00.GetLength()-1; Number++) {
+                BKT_BM07_00.Pop();
+            }
         }
         else if(text == "07:30:00") {
             Console.WriteLine("*************| Time Table : 07:30:00 |*************");
             for(int Number = 0; Number <= BM_BKT07_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT07_30.Get(Number));
+                BM_BKT07_30.Pop();
+            }
+            for(int Number = 0; Number <= BM_BKT07_30.GetLength()-1; Number++) {
                 BM_BKT07_30.Pop();
             }
         }
@@ -53,11 +59,17 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_00.Get(Number));
                 BM_BKT08_00.Pop();
             }
+            for(int Number = 0; Number <= BM_BKT08_00.GetLength()-1; Number++) {
+                BM_BKT08_00.Pop();
+            }
         }
         else if(text == "08:15:00") {
             Console.WriteLine("*************| Time Table : 08:15:00 |*************");
             for(int Number = 0; Number <= BM_BKT08_15.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_15.Get(Number));
+                BM_BKT08_15.Pop();
+            }
+            for(int Number = 0; Number <= BM_BKT08_15.GetLength()-1; Number++) {
                 BM_BKT08_15.Pop();
             }
         }
@@ -67,11 +79,17 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_30.Get(Number));
                 BM_BKT08_30.Pop();
             }
+            for(int Number = 0; Number <= BM_BKT08_30.GetLength()-1; Number++) {
+                BM_BKT08_30.Pop();
+            }
         }
         else if(text == "10:00:00") { //บางขุน
             Console.WriteLine("*************| Time Table : 10:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM10_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM10_00.Get(Number));
+                BKT_BM10_00.Pop();
+            }
+            for(int Number = 0; Number <= BKT_BM10_00.GetLength()-1; Number++) {
                 BKT_BM10_00.Pop();
             }
         }
@@ -81,11 +99,17 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT12_00.Get(Number));
                 BM_BKT12_00.Pop();
             }
+            for(int Number = 0; Number <= BM_BKT12_00.GetLength()-1; Number++) {
+                BM_BKT12_00.Pop();
+            }
         }
         else if(text == "13:00:00") { //บางขุน
             Console.WriteLine("*************| Time Table : 13:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM13_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM13_00.Get(Number));
+                BKT_BM13_00.Pop();
+            }
+            for(int Number = 0; Number <= BKT_BM13_00.GetLength()-1; Number++) {
                 BKT_BM13_00.Pop();
             }
         }
@@ -95,6 +119,9 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT14_00.Get(Number));
                 BM_BKT14_00.Pop();
             }
+            for(int Number = 0; Number <= BM_BKT14_00.GetLength()-1; Number++) {
+                BM_BKT14_00.Pop();
+            }
         }
         else if(text == "15:00:00") { //บางขุน
             Console.WriteLine("*************| Time Table : 15:00:00 |*************");
@@ -102,11 +129,18 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM15_00.Get(Number));
                 BKT_BM15_00.Pop();
             }
+            for(int Number = 0; Number <= BKT_BM15_00.GetLength()-1; Number++) {
+
+                BKT_BM15_00.Pop();
+            }
         }
         else if(text == "16:00:00") {
             Console.WriteLine("*************| Time Table : 16:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT16_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT16_00.Get(Number));
+                BM_BKT16_00.Pop();
+            }
+            for(int Number = 0; Number <= BM_BKT16_00.GetLength()-1; Number++) {
                 BM_BKT16_00.Pop();
             }
         }
@@ -140,23 +174,31 @@ class Program {
         }
     }
     static void PrintMenuScreen()
-    {
+    {   
+        Thread mainThred = Thread.CurrentThread;
+        mainThred.Name = "Main thred";
+        Thread thread1 = new Thread(() => CheckTime()); 
+        Thread thread2 = new Thread(() => PrintFirstListMenu());
+        Thread thread3 = new Thread(() => InputMenuFromKeyboard());
+        
+        thread1.Start();
+        thread2.Start();
+        thread3.Start();
+
         Console.Clear();
+        
+    }
+    static void CheckTime() {
         while(true) {
 
             string text = DateTime.Now.ToLongTimeString();
-            Console.WriteLine(text);
-            Thread.Sleep(1000);//เรียกต่อ1วินาที
+            //Thread.Sleep(1000);//เรียกต่อ1วินาที
 
             CalculateTime(text, BM_BKT07_30, BM_BKT08_00, BM_BKT08_15, BM_BKT08_30, BM_BKT12_00, BM_BKT14_00
             , BM_BKT16_00, BKT_BM07_00, BKT_BM10_00, BKT_BM13_00, BKT_BM15_00, BKT_BM16_30, BKT_BM17_00
             , BKT_BM17_30, BKT_BM18_30);
-        
-            PrintFirstListMenu();
-            InputMenuFromKeyboard();
         }
     }
-
     static void PrintFirstListMenu()
     {
         Console.WriteLine("Welcome to KMUTT Bus Booking");
