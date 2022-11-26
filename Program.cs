@@ -37,9 +37,8 @@ class Program {
             Console.WriteLine("Time Table : 07:00:00");
             for(int Number = 0; Number <= BKT_BM07_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM07_00.Get(Number));
-                BKT_BM07_00.Pop();
             }
-            for(int Number = 0; Number <= BKT_BM07_00.GetLength()-1; Number++) {
+            while (BKT_BM07_00.GetLength() != 0) {
                 BKT_BM07_00.Pop();
             }
         }
@@ -47,9 +46,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 07:30:00 |*************");
             for(int Number = 0; Number <= BM_BKT07_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT07_30.Get(Number));
-                BM_BKT07_30.Pop();
             }
-            for(int Number = 0; Number <= BM_BKT07_30.GetLength()-1; Number++) {
+            while (BM_BKT07_30.GetLength() != 0) {
                 BM_BKT07_30.Pop();
             }
         }
@@ -57,9 +55,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 08:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT08_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_00.Get(Number));
-                BM_BKT08_00.Pop();
             }
-            for(int Number = 0; Number <= BM_BKT08_00.GetLength()-1; Number++) {
+            while (BM_BKT08_00.GetLength() != 0) {
                 BM_BKT08_00.Pop();
             }
         }
@@ -67,9 +64,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 08:15:00 |*************");
             for(int Number = 0; Number <= BM_BKT08_15.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_15.Get(Number));
-                BM_BKT08_15.Pop();
             }
-            for(int Number = 0; Number <= BM_BKT08_15.GetLength()-1; Number++) {
+            while (BM_BKT08_15.GetLength() != 0) {
                 BM_BKT08_15.Pop();
             }
         }
@@ -77,9 +73,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 08:30:00 |*************");
             for(int Number = 0; Number <= BM_BKT08_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_30.Get(Number));
-                BM_BKT08_30.Pop();
             }
-            for(int Number = 0; Number <= BM_BKT08_30.GetLength()-1; Number++) {
+            while (BM_BKT08_30.GetLength() != 0) {
                 BM_BKT08_30.Pop();
             }
         }
@@ -87,9 +82,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 10:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM10_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM10_00.Get(Number));
-                BKT_BM10_00.Pop();
             }
-            for(int Number = 0; Number <= BKT_BM10_00.GetLength()-1; Number++) {
+            while (BKT_BM10_00.GetLength() != 0) {
                 BKT_BM10_00.Pop();
             }
         }
@@ -97,19 +91,17 @@ class Program {
             Console.WriteLine("*************| Time Table : 12:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT12_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT12_00.Get(Number));
-                BM_BKT12_00.Pop();
             }
-            for(int Number = 0; Number <= BM_BKT12_00.GetLength()-1; Number++) {
+            while (BM_BKT12_00.GetLength() != 0) {
                 BM_BKT12_00.Pop();
             }
         }
         else if(text == "13:00:00") { //บางขุน
             Console.WriteLine("*************| Time Table : 13:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM13_00.GetLength()-1; Number++) {
-                Console.WriteLine("{0}. {1}", Number+1, BKT_BM13_00.Get(Number));
-                BKT_BM13_00.Pop();
+                Console.WriteLine("{0}. {1}", Number+1, BKT_BM13_00.Get(Number));;
             }
-            for(int Number = 0; Number <= BKT_BM13_00.GetLength()-1; Number++) {
+            while (BKT_BM13_00.GetLength() != 0) {
                 BKT_BM13_00.Pop();
             }
         }
@@ -117,9 +109,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 14:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT14_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT14_00.Get(Number));
-                BM_BKT14_00.Pop();
             }
-            for(int Number = 0; Number <= BM_BKT14_00.GetLength()-1; Number++) {
+            while (BM_BKT14_00.GetLength() != 0) {
                 BM_BKT14_00.Pop();
             }
         }
@@ -127,10 +118,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 15:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM15_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM15_00.Get(Number));
-                BKT_BM15_00.Pop();
             }
-            for(int Number = 0; Number <= BKT_BM15_00.GetLength()-1; Number++) {
-
+            while (BKT_BM15_00.GetLength() != 0) {
                 BKT_BM15_00.Pop();
             }
         }
@@ -138,9 +127,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 16:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT16_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT16_00.Get(Number));
-                BM_BKT16_00.Pop();
             }
-            for(int Number = 0; Number <= BM_BKT16_00.GetLength()-1; Number++) {
+            while (BM_BKT16_00.GetLength() != 0) {
                 BM_BKT16_00.Pop();
             }
         }
@@ -148,20 +136,18 @@ class Program {
             Console.WriteLine("*************| Time Table : 16:30:00 |*************");
             for(int Number = 0; Number <= BKT_BM16_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM16_30.Get(Number));
+            }
+            while (BKT_BM16_30.GetLength() != 0) {
                 BKT_BM16_30.Pop();
-                }
-            for(int Number = 0; Number <= BKT_BM16_30.GetLength()-1; Number++) {
-                BKT_BM16_30.Pop();
-                }
+            }
         }
         else if(text == "17:00:00") { //บางขุน
             Console.WriteLine("*************| Time Table : 17:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM17_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_00.Get(Number));
-                BKT_BM17_00.Pop();
             }
-            for(int Number = 0; Number <= BKT_BM17_00.GetLength()-1; Number++) {
-                Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_00.Get(Number));
+            int round = BKT_BM17_00.GetLength()-1;
+            while (BKT_BM17_00.GetLength() != 0) {
                 BKT_BM17_00.Pop();
             }
         }
@@ -169,10 +155,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 17:30:00 |*************");
             for(int Number = 0; Number <= BKT_BM17_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_30.Get(Number));
-                BKT_BM17_30.Pop();
             }
-            for(int Number = 0; Number <= BKT_BM17_30.GetLength()-1; Number++) {
-                Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_30.Get(Number));
+            while (BKT_BM17_30.GetLength() != 0) {
                 BKT_BM17_30.Pop();
             }
         }
@@ -180,10 +164,8 @@ class Program {
             Console.WriteLine("*************| Time Table : 18:30:00 |*************");
             for(int Number = 0; Number <= BKT_BM18_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM18_30.Get(Number));
-                BKT_BM18_30.Pop();
             }
-            for(int Number = 0; Number <= BKT_BM18_30.GetLength()-1; Number++) {
-                Console.WriteLine("{0}. {1}", Number+1, BKT_BM18_30.Get(Number));
+            while (BKT_BM18_30.GetLength() != 0) {
                 BKT_BM18_30.Pop();
             }
         }
