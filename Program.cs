@@ -29,7 +29,7 @@ class Program {
         PrintMenuScreen();
         
     }
-    public static void CalculateTime(string text, Queue<string> BM_BKT07_30, Queue<string> BM_BKT08_00, Queue<string> BM_BKT08_15, Queue<string> BM_BKT08_30, Queue<string> BM_BKT12_00
+    public static void PrintNontification(string text, Queue<string> BM_BKT07_30, Queue<string> BM_BKT08_00, Queue<string> BM_BKT08_15, Queue<string> BM_BKT08_30, Queue<string> BM_BKT12_00
     , Queue<string> BM_BKT14_00, Queue<string> BM_BKT16_00, Queue<string> BKT_BM07_00, Queue<string> BKT_BM10_00, Queue<string> BKT_BM13_00, Queue<string> BKT_BM15_00, Queue<string> BKT_BM16_30
     , Queue<string> BKT_BM17_00, Queue<string> BKT_BM17_30, Queue<string> BKT_BM18_30) {
         
@@ -150,9 +150,16 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM16_30.Get(Number));
                 BKT_BM16_30.Pop();
                 }
+            for(int Number = 0; Number <= BKT_BM16_30.GetLength()-1; Number++) {
+                BKT_BM16_30.Pop();
+                }
         }
         else if(text == "17:00:00") { //บางขุน
             Console.WriteLine("*************| Time Table : 17:00:00 |*************");
+            for(int Number = 0; Number <= BKT_BM17_00.GetLength()-1; Number++) {
+                Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_00.Get(Number));
+                BKT_BM17_00.Pop();
+            }
             for(int Number = 0; Number <= BKT_BM17_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_00.Get(Number));
                 BKT_BM17_00.Pop();
@@ -164,9 +171,17 @@ class Program {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_30.Get(Number));
                 BKT_BM17_30.Pop();
             }
+            for(int Number = 0; Number <= BKT_BM17_30.GetLength()-1; Number++) {
+                Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_30.Get(Number));
+                BKT_BM17_30.Pop();
+            }
         }
         else if(text == "18:30:00") { //บางขุน
             Console.WriteLine("*************| Time Table : 18:30:00 |*************");
+            for(int Number = 0; Number <= BKT_BM18_30.GetLength()-1; Number++) {
+                Console.WriteLine("{0}. {1}", Number+1, BKT_BM18_30.Get(Number));
+                BKT_BM18_30.Pop();
+            }
             for(int Number = 0; Number <= BKT_BM18_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM18_30.Get(Number));
                 BKT_BM18_30.Pop();
@@ -194,7 +209,7 @@ class Program {
             string text = DateTime.Now.ToLongTimeString();
             //Thread.Sleep(1000);//เรียกต่อ1วินาที
 
-            CalculateTime(text, BM_BKT07_30, BM_BKT08_00, BM_BKT08_15, BM_BKT08_30, BM_BKT12_00, BM_BKT14_00
+            PrintNontification(text, BM_BKT07_30, BM_BKT08_00, BM_BKT08_15, BM_BKT08_30, BM_BKT12_00, BM_BKT14_00
             , BM_BKT16_00, BKT_BM07_00, BKT_BM10_00, BKT_BM13_00, BKT_BM15_00, BKT_BM16_30, BKT_BM17_00
             , BKT_BM17_30, BKT_BM18_30);
         }
