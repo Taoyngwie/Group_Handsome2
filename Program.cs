@@ -1,5 +1,5 @@
 ﻿enum Menu {
-    Register = 1, Login
+    Register = 1, Login, MockupTime
 }
 enum MenuII {
     Register = 1, BangModToBangKhunTien, BangKhunTienToBangMod, Logout
@@ -170,6 +170,9 @@ class Program {
             }
         }
     }
+    static void MockupTime() {
+
+    }
     static void PrintMenuScreen()
     {   
         Thread mainThred = Thread.CurrentThread;
@@ -202,6 +205,7 @@ class Program {
         Console.WriteLine("*******************************************************");
         Console.WriteLine("1. Register");
         Console.WriteLine("2. Login");
+        Console.WriteLine("3. Select mockup time");
         Console.WriteLine("Any number to end this program.");
         Console.WriteLine("*******************************************************");
     }
@@ -261,9 +265,9 @@ class Program {
                 break;
 
             case MenuII.BangModToBangKhunTien:
-                Logout();
                 string TimeCheckBM = ShowTimeBM_BKT();
                 AddQueue(TimeCheckBM, login);
+                Logout();
                 break;
 
             case MenuII.BangKhunTienToBangMod:
@@ -342,6 +346,8 @@ class Program {
         Console.WriteLine("5. 12:00");
         Console.WriteLine("6. 14:00");
         Console.WriteLine("7. 16:00");
+        Console.WriteLine("***************************************");
+        Console.Write("Please input time : ");
 
         int i = int.Parse(Console.ReadLine());
         if(i == 1) {
@@ -379,6 +385,9 @@ class Program {
         Console.WriteLine("6. 17:00");
         Console.WriteLine("7. 17:30");
         Console.WriteLine("8. 18:00");
+        Console.WriteLine("***************************************");
+        Console.Write("Please input time : ");
+
         int i = int.Parse(Console.ReadLine());
         if(i == 1) {
             return "07:00";
@@ -412,10 +421,7 @@ class Program {
 
         Console.WriteLine("Register for KMUTT Bus Booking");
         Console.WriteLine("*****************************************");
-
-        Console.WriteLine("Input Your Type");
-        Console.WriteLine("1.College Student.");
-        Console.WriteLine("2.Teacher.");
+        Console.Write("Select Type (1.College Student, 2.Teacher) : ");
             for(int i = 0; i  <= 0;)
             {
                 int s = int.Parse(Console.ReadLine());
@@ -424,40 +430,62 @@ class Program {
                     InputCollegeStudentInfoFromKeyboard();
                     i++;
                 }
-
                 else if (s == 3)
                 {
                     InputTeacherInfoFromKeyboard();
                     i++;
                 }
-
                 else
                 {
-                    Console.WriteLine("Please Enter only 1 or 2 :");             
+                    Console.WriteLine("*****************************************");
+                    Console.Write("Please Enter only 1 or 2 : ");             
                 }
             }
-          BlackToMenu();
+        BlackToMenu();
     } 
 
     static void InputCollegeStudentInfoFromKeyboard()
     {
-        StudentInfo student = new StudentInfo(InputTitle(), InputName(), InputLast(),InputStudentID(),InputEmail(), InputPassword());
-        Program.registerList.AddNewPerson(student);
+        string getemailStudent = InputEmail();
+        StudentInfo student = new StudentInfo(InputTitle(), InputName(), InputLast(),InputStudentID(),getemailStudent, InputPassword());
+        if(Program.registerList.CheckRegister(getemailStudent))
+        {
+            Program.registerList.AddNewPerson(student);
+        }
+
+        else
+        {
+            Console.WriteLine("Try again. This email exist in system");
+            Console.ReadLine();
+            PrintMenuScreen();
+        }
     }
 
     static void InputTeacherInfoFromKeyboard()
     {
-        TeacherInfo teacher = new TeacherInfo(InputTitle(), InputName(), InputLast(),InputEmail(), InputPassword());
-        Program.registerList.AddNewPerson(teacher);
+        string getemailTeacher = InputEmail();
+        TeacherInfo teacher = new TeacherInfo(InputTitle(), InputName(), InputLast(),getemailTeacher, InputPassword());
+        if(Program.registerList.CheckRegister(getemailTeacher))
+        {
+            Program.registerList.AddNewPerson(teacher);
+        }
+
+        else
+        {
+            Console.WriteLine("Try again. This email exist in system");
+            Console.ReadLine();
+            PrintMenuScreen();
+        }
     }
 
     static void Login()
-    {
-        Console.WriteLine("Login");
-        Console.WriteLine("***************************");
-        Console.WriteLine("Input Email: ");
+    {   
+        Console.Clear();
+        Console.WriteLine("Login for KMUTT Bus Booking");
+        Console.WriteLine("*****************************************");
+        Console.Write("Input Email : ");
         string mail = Console.ReadLine();
-        Console.WriteLine("Input Password: ");
+        Console.Write("Input Password : ");
         string pass = Console.ReadLine();
 
         if(mail == "exit")
@@ -501,45 +529,42 @@ class Program {
 
     static string InputName()
     {
-        Console.Write("Name: ");
+        Console.Write("Name : ");
 
         return Console.ReadLine();
     }
 
     static string InputStudentID()
     {
-        Console.Write("StudentID: ");
+        Console.Write("StudentID : ");
 
         return Console.ReadLine();
     }
 
     static string InputLast()
     {
-        Console.Write("Last Name: ");
+        Console.Write("Last Name : ");
 
         return Console.ReadLine();
     }
 
     static string InputEmail()
     {
-       Console.Write("Email: ");
+       Console.Write("Email : ");
 
         return Console.ReadLine(); 
     }
 
     static string InputPassword()
     {
-       Console.Write("Password: ");
+       Console.Write("Password : ");
 
         return Console.ReadLine(); 
     }
 
     static string InputTitle()
     {   
-        Console.WriteLine("1.Mr.");
-        Console.WriteLine("2.Mrs.");
-        Console.WriteLine("3.Miss.");
-        Console.Write("Input Your Title Name : ");
+        Console.Write("Input Your Title Name (1.Mr, 2.Mrs, 3.Miss) : ");
         int s = int.Parse(Console.ReadLine());
         if (s == 1)
         {
@@ -557,6 +582,7 @@ class Program {
         }
         else
         {
+            Console.WriteLine("*****************************************");
             Console.WriteLine("Please Enter only 1-3 :");
             return null;             
         }

@@ -68,4 +68,25 @@ class RegisterInfoList
          }  
          return false;
     }
+    public bool CheckRegister(string email)
+    {
+         foreach(Info info in this.registerInfoList)
+         {
+            if(info is TeacherInfo teacherInfo)
+            {
+                if(teacherInfo.GetEmail() == email )
+                {
+                    return false;
+                }
+            }
+            else if(info is StudentInfo studentInfo)
+            {
+                if(studentInfo.GetEmail() == email )
+                {
+                    return false;
+                }
+            }
+         }  
+         return true;
+    }
 }
