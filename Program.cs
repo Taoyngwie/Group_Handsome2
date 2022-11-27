@@ -290,367 +290,74 @@ class Program {
     public static void AddQueue(string TimeCheck, Info login) {
         switch (TimeCheck) {
             case "07:30" :
-                if(BM_BKT07_30.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BM_BKT07_30.GetLength()-1; roundNum++)
-                    {
-                        if(BM_BKT07_30.Get(roundNum) != Login.GetFullname(roundNum))
-                        {
-                            BM_BKT07_30.Push(login.GetFullName());
-                        }
-                        else
-                        {   
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                            
-                        }
-                    }
-                }
-                else
-                {
-                    BM_BKT07_30.Push(login.GetFullName());
-                }
+                CheckTimeRegister(ref BM_BKT07_30, login);
                 break;
             case "08:00" :
-                if(BM_BKT08_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BM_BKT08_00.GetLength()-1; roundNum++)
-                    {
-                        if(BM_BKT08_00.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BM_BKT08_00.Push(login.GetFullName());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BM_BKT08_00.Push(login.GetFullName());
-                }
+                CheckTimeRegister(ref BM_BKT08_00, login);
                 break;
             case "08:15" :
-                if(BM_BKT08_15.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BM_BKT08_15.GetLength() - 1; roundNum++)
-                    {
-                        if(BM_BKT08_15.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BM_BKT08_15.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BM_BKT08_15.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BM_BKT08_15, login);
                 break;
             case "08:30" :
-                if(BM_BKT08_30.GetLength() !=0)
-                {
-                    for(int roundNum = 0; roundNum <= BM_BKT08_30.GetLength() - 1; roundNum++)
-                    {
-                        if(BM_BKT08_30.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BM_BKT08_30.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }   
-                }
-                else
-                {
-                    BM_BKT08_30.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BM_BKT08_30, login);
                 break;
             case "12:00" :
-                if(BM_BKT12_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BM_BKT12_00.GetLength() - 1;roundNum++)
-                    {
-                        if(BM_BKT12_00.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BM_BKT12_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BM_BKT12_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BM_BKT12_00, login);
                 break;
             case "14:00" :
-                if(BM_BKT14_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BM_BKT14_00.GetLength() - 1; roundNum++)
-                    {
-                        if(BM_BKT14_00(roundNum) != login.GetFull(roundNum))
-                        {
-                            BM_BKT14_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BM_BKT14_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BM_BKT14_00, login);
                 break;
             case "16:00" :
-                if(BM_BKT16_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BM_BKT16_00.GetLength() - 1; roundNum++)
-                    {
-                        if(BM_BKT16_00.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BM_BKT16_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BM_BKT16_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BM_BKT16_00, login);
                 break;
             case "07:00" :
-                if(BKT_BM07_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM07_00.GetLength() - 1; roundNum++ )
-                    {
-                        if(BKT_BM07_00(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BKT_BM07_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM07_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM07_00, login);
                 break;
             case "10:00" :
-                if(BKT_BM10_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM10_00.GetLength() -1; roundNum++)
-                    {
-                        if(BKT_BM10_00(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BKT_BM10_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM10_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM10_00, login);
                 break;
             case "13:00" :
-                if(BKT_BM13_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM13_00.GetLength() - 1; roundNum++)
-                    {
-                        if(BKT_BM13_00(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BKT_BM13_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM13_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM13_00, login);
                 break;
             case "15:00" :
-                if(BKT_BM15_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM15_00.GetLength() -1; roundNum++)
-                    {
-                        if(BKT_BM15_00.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BKT_BM15_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM15_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM15_00, login);
                 break;
             case "16:30" :
-                if(BKT_BM16_30.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM16_30.GetLength()- 1; roundNum++)
-                    {
-                        if(BKT_BM16_30.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BKT_BM16_30.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM16_30.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM16_30, login);
                 break;
             case "17:00" :
-                if(BKT_BM17_00.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM17_00.GetLength() - 1; roundNum++)
-                    {
-                        if(BKT_BM17_00.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BKT_BM17_00.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM17_00.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM17_00, login);
                 break;
             case "17:30" :
-                if(BKT_BM17_30.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM17_30.GetLength() - 1; roundNum++)
-                    {
-                        if(BKT_BM17_30.Get(roundNum) != login.GetFullname(roundNum))
-                        {
-                            BKT_BM17_30.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM17_30.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM17_30, login);
                 break;
             case "18:30" :
-                if(BKT_BM18_30.GetLength() != 0)
-                {
-                    for(int roundNum = 0; roundNum <= BKT_BM18_30.GetLength() -1; roundNum++)
-                    {
-                        if(BKT_BM18_30.Get(roundNum) != Login.GetFullname(roundNum))
-                        {
-                            BKT_BM18_30.Push(login.GetFullname());
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You already register this time => Please enter to Go next");
-                            Console.ReadLine();
-                            Console.Clear();
-                            BlackToMenuII();
-                        }
-                    }
-                }
-                else
-                {
-                    BKT_BM18_30.Push(login.GetFullname());
-                }
+                CheckTimeRegister(ref BKT_BM18_30, login);
                 break;
         }
+    }
+    public static void CheckTimeRegister(ref Queue<string> input, Info login) {
+        if(input.GetLength() != 0)
+            {
+                for(int roundNum = 0; roundNum <= input.GetLength() - 1; roundNum++)
+                {
+                    if(input.Get(roundNum) != login.GetFullName())
+                    {
+                        input.Push(login.GetFullName());
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.Write("You already register this time => Please enter to Go next");
+                        Console.ReadLine();
+                        BlackToMenuII();
+                    }
+                }
+            }
+        else
+        {
+            input.Push(login.GetFullName());
+       }
     }
     public static string ShowTimeBM_BKT()
     {   
