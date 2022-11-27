@@ -141,14 +141,37 @@ class Program
 
     static void InputCollegeStudentInfoFromKeyboard()
     {
-        StudentInfo student = new StudentInfo(InputTitle(), InputName(), InputLast(),InputStudentID(),InputEmail(), InputPassword());
-        Program.registerList.AddNewPerson(student);
+        string getemailStudent = InputEmail();
+        StudentInfo student = new StudentInfo(InputTitle(), InputName(), InputLast(),InputStudentID(),getemailStudent, InputPassword());
+        if(Program.registerList.CheckRegister(getemailStudent))
+        {
+            Program.registerList.AddNewPerson(student);
+        }
+
+        else
+        {
+            Console.WriteLine("Try again. This email exist in system");
+            PrintFirstListMenu();
+            InputMenuFromKeyboard();
+        }
     }
 
     static void InputTeacherInfoFromKeyboard()
     {
-        TeacherInfo teacher = new TeacherInfo(InputTitle(), InputName(), InputLast(),InputEmail(), InputPassword());
-        Program.registerList.AddNewPerson(teacher);
+        string getemailTeacher = InputEmail();
+        TeacherInfo teacher = new TeacherInfo(InputTitle(), InputName(), InputLast(),getemailTeacher, InputPassword());
+        if(Program.registerList.CheckRegister(getemailTeacher))
+        {
+            Program.registerList.AddNewPerson(teacher);
+        }
+
+        else
+        {
+            Console.WriteLine("Try again. This email exist in system");
+            PrintFirstListMenu();
+            InputMenuFromKeyboard();
+        }
+        
     }
 
     static void Login()
