@@ -337,7 +337,7 @@ class Program {
         }
     }
     public static void CheckTimeRegister(ref Queue<string> input, Info login) {
-        if(input.GetLength() != 0)
+        if(input.GetLength() != 0 && input.GetLength() <= 30)
             {
                 for(int roundNum = 0; roundNum <= input.GetLength() - 1; roundNum++)
                 {
@@ -354,23 +354,30 @@ class Program {
                     }
                 }
             }
+        else if(input.GetLength() > 30 ) {
+            Console.Clear();
+            Console.Write("Out of seat => Please enter to Go next");
+            Console.ReadLine();
+            BlackToMenuII();
+        }
         else
         {
             input.Push(login.GetFullName());
-       }
+        }
     }
     public static string ShowTimeBM_BKT()
     {   
         Console.Clear();
-        Console.WriteLine("*********| Select time to go |*********");
-        Console.WriteLine("1. 07:30");
-        Console.WriteLine("2. 08:00");
-        Console.WriteLine("3. 08:15");
-        Console.WriteLine("4. 08:30");
-        Console.WriteLine("5. 12:00");
-        Console.WriteLine("6. 14:00");
-        Console.WriteLine("7. 16:00");
-        Console.WriteLine("***************************************");
+        Console.WriteLine("        Bangmod To Bangkhuntien        ");
+        Console.WriteLine("**| Select time to go |**");
+        Console.WriteLine("1. 07:30 => Seat Remain : {0}",30-BM_BKT07_30.GetLength());
+        Console.WriteLine("2. 08:00 => Seat Remain : {0}",30-BM_BKT08_00.GetLength());
+        Console.WriteLine("3. 08:15 => Seat Remain : {0}",30-BM_BKT08_15.GetLength());
+        Console.WriteLine("4. 08:30 => Seat Remain : {0}",30-BM_BKT08_30.GetLength());
+        Console.WriteLine("5. 12:00 => Seat Remain : {0}",30-BM_BKT12_00.GetLength());
+        Console.WriteLine("6. 14:00 => Seat Remain : {0}",30-BM_BKT14_00.GetLength());
+        Console.WriteLine("7. 16:00 => Seat Remain : {0}",30-BM_BKT16_00.GetLength());
+        Console.WriteLine("***");
         Console.Write("Please input time : ");
 
         int i = int.Parse(Console.ReadLine());
@@ -400,18 +407,18 @@ class Program {
     public static string showTimeBKT_BM()
     {   
         Console.Clear();
-        Console.WriteLine("*********| Select time to go |*********");
-        Console.WriteLine("1. 07:00");
-        Console.WriteLine("2. 10:00");
-        Console.WriteLine("3. 13:00");
-        Console.WriteLine("4. 15:00");
-        Console.WriteLine("5. 16:30");
-        Console.WriteLine("6. 17:00");
-        Console.WriteLine("7. 17:30");
-        Console.WriteLine("8. 18:00");
-        Console.WriteLine("***************************************");
+        Console.WriteLine("        Bangkhuntien To Bangmon        ");
+        Console.WriteLine("**| Select time to go |**");
+        Console.WriteLine("1. 07:00 => Seat Remain : {0}",30-BKT_BM07_00.GetLength());
+        Console.WriteLine("2. 10:00 => Seat Remain : {0}",30-BKT_BM10_00.GetLength());
+        Console.WriteLine("3. 13:00 => Seat Remain : {0}",30-BKT_BM13_00.GetLength());
+        Console.WriteLine("4. 15:00 => Seat Remain : {0}",30-BKT_BM15_00.GetLength());
+        Console.WriteLine("5. 16:30 => Seat Remain : {0}",30-BKT_BM16_30.GetLength());
+        Console.WriteLine("6. 17:00 => Seat Remain : {0}",30-BKT_BM17_00.GetLength());
+        Console.WriteLine("7. 17:30 => Seat Remain : {0}",30-BKT_BM17_30.GetLength());
+        Console.WriteLine("8. 18:30 => Seat Remain : {0}",30-BKT_BM18_30.GetLength());
+        Console.WriteLine("***");
         Console.Write("Please input time : ");
-
         int i = int.Parse(Console.ReadLine());
         if(i == 1) {
             return "07:00";
@@ -610,9 +617,6 @@ class Program {
             Console.WriteLine("Please Enter only 1-3 :");
             return null;             
         }
-    }
-    public static void TimeCheck() { //รับค่า Person login
-        
     }
     
 }
