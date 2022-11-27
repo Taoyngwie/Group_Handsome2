@@ -29,12 +29,12 @@ class Program {
         PrintMenuScreen();
         
     }
-    public static void PrintNontification(string text, Queue<string> BM_BKT07_30, Queue<string> BM_BKT08_00, Queue<string> BM_BKT08_15, Queue<string> BM_BKT08_30, Queue<string> BM_BKT12_00
-    , Queue<string> BM_BKT14_00, Queue<string> BM_BKT16_00, Queue<string> BKT_BM07_00, Queue<string> BKT_BM10_00, Queue<string> BKT_BM13_00, Queue<string> BKT_BM15_00, Queue<string> BKT_BM16_30
-    , Queue<string> BKT_BM17_00, Queue<string> BKT_BM17_30, Queue<string> BKT_BM18_30) {
-        
-        if(text == "07:00:00" ) { //บางขุน
-            Console.WriteLine("Time Table : 07:00:00");
+    public static void PrintNotification(string text, ref bool IsTrueTime) {
+
+        if(text == "7:00:00 AM" ) { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
+            Console.WriteLine("*************| Time Table : 07:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM07_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM07_00.Get(Number));
             }
@@ -42,7 +42,9 @@ class Program {
                 BKT_BM07_00.Pop();
             }
         }
-        else if(text == "07:30:00") {
+        else if(text == "7:30:00 AM") {
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 07:30:00 |*************");
             for(int Number = 0; Number <= BM_BKT07_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT07_30.Get(Number));
@@ -51,7 +53,9 @@ class Program {
                 BM_BKT07_30.Pop();
             }
         }
-        else if(text == "08:00:00") {
+        else if(text == "8:00:00 AM") {
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 08:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT08_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_00.Get(Number));
@@ -60,7 +64,9 @@ class Program {
                 BM_BKT08_00.Pop();
             }
         }
-        else if(text == "08:15:00") {
+        else if(text == "8:15:00 AM") {
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 08:15:00 |*************");
             for(int Number = 0; Number <= BM_BKT08_15.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_15.Get(Number));
@@ -69,7 +75,9 @@ class Program {
                 BM_BKT08_15.Pop();
             }
         }
-        else if(text == "08:30:00") {
+        else if(text == "8:30:00 AM") {
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 08:30:00 |*************");
             for(int Number = 0; Number <= BM_BKT08_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT08_30.Get(Number));
@@ -78,7 +86,9 @@ class Program {
                 BM_BKT08_30.Pop();
             }
         }
-        else if(text == "10:00:00") { //บางขุน
+        else if(text == "10:00:00 AM") { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 10:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM10_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM10_00.Get(Number));
@@ -87,7 +97,9 @@ class Program {
                 BKT_BM10_00.Pop();
             }
         }
-        else if(text == "12:00:00") {
+        else if(text == "12:00:00 AM") {
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 12:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT12_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT12_00.Get(Number));
@@ -96,7 +108,9 @@ class Program {
                 BM_BKT12_00.Pop();
             }
         }
-        else if(text == "13:00:00") { //บางขุน
+        else if(text == "1:00:00 PM") { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 13:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM13_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM13_00.Get(Number));;
@@ -105,7 +119,9 @@ class Program {
                 BKT_BM13_00.Pop();
             }
         }
-        else if(text == "14:00:00") {
+        else if(text == "2:00:00 PM") {
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 14:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT14_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT14_00.Get(Number));
@@ -114,7 +130,9 @@ class Program {
                 BM_BKT14_00.Pop();
             }
         }
-        else if(text == "15:00:00") { //บางขุน
+        else if(text == "3:00:00 PM") { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 15:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM15_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM15_00.Get(Number));
@@ -123,7 +141,9 @@ class Program {
                 BKT_BM15_00.Pop();
             }
         }
-        else if(text == "16:00:00") {
+        else if(text == "4:00:00 PM") {
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 16:00:00 |*************");
             for(int Number = 0; Number <= BM_BKT16_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BM_BKT16_00.Get(Number));
@@ -132,7 +152,9 @@ class Program {
                 BM_BKT16_00.Pop();
             }
         }
-        else if(text == "16:30:00") { //บางขุน
+        else if(text == "4:30:00 PM") { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 16:30:00 |*************");
             for(int Number = 0; Number <= BKT_BM16_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM16_30.Get(Number));
@@ -141,7 +163,9 @@ class Program {
                 BKT_BM16_30.Pop();
             }
         }
-        else if(text == "17:00:00") { //บางขุน
+        else if(text == "5:00:00 PM") { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 17:00:00 |*************");
             for(int Number = 0; Number <= BKT_BM17_00.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_00.Get(Number));
@@ -151,7 +175,9 @@ class Program {
                 BKT_BM17_00.Pop();
             }
         }
-        else if(text == "17:30:00") { //บางขุน
+        else if(text == "5:30:00 PM") { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 17:30:00 |*************");
             for(int Number = 0; Number <= BKT_BM17_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM17_30.Get(Number));
@@ -160,7 +186,9 @@ class Program {
                 BKT_BM17_30.Pop();
             }
         }
-        else if(text == "18:30:00") { //บางขุน
+        else if(text == "6:30:00 PM") { //บางขุน
+            IsTrueTime = true;
+            Console.Clear();
             Console.WriteLine("*************| Time Table : 18:30:00 |*************");
             for(int Number = 0; Number <= BKT_BM18_30.GetLength()-1; Number++) {
                 Console.WriteLine("{0}. {1}", Number+1, BKT_BM18_30.Get(Number));
@@ -171,7 +199,82 @@ class Program {
         }
     }
     static void MockupTime() {
+        Console.WriteLine("*************| Time mockup select |*************");
+        Console.WriteLine("1.  07:30");
+        Console.WriteLine("2.  08:00");
+        Console.WriteLine("3.  08:15");
+        Console.WriteLine("4.  08:30");
+        Console.WriteLine("5.  12:00");
+        Console.WriteLine("6.  14:00");
+        Console.WriteLine("7.  16:00");
+        Console.WriteLine("8.  07:00");
+        Console.WriteLine("9.  10:00");
+        Console.WriteLine("10. 13:00");
+        Console.WriteLine("11. 15:00");
+        Console.WriteLine("12. 16:30");
+        Console.WriteLine("13. 17:00");
+        Console.WriteLine("14. 17:30");
+        Console.WriteLine("15. 18:30");
+        string TimeSelect = "";
+        Console.Write("Please Input number : ");
+        int numberSelect = int.Parse(Console.ReadLine());       
+        switch (numberSelect)
+        {
+            case 1:
+                TimeSelect = "7:30:00 AM";
+                break;
 
+            case 2:
+                TimeSelect = "8:00:00 AM";
+                break;
+            case 3:
+                TimeSelect = "8:15:00 AM";
+                break;
+            case 4:
+                TimeSelect = "8:30:00 AM";
+                break;
+            case 5:
+                TimeSelect = "12:00:00 AM";
+                break;
+            case 6:
+                TimeSelect = "2:00:00 PM";
+                break;
+            case 7:
+                TimeSelect = "4:00:00 PM";
+                break;
+            case 8:
+                TimeSelect = "7:00:00 AM";
+                break;
+            case 9:
+                TimeSelect = "10:00:00 AM";
+                break;
+            case 10:
+                TimeSelect = "1:00:00 PM";
+                break;
+            case 11:
+                TimeSelect = "3:00:00 PM";
+                break;
+            case 12:
+                TimeSelect = "4:30:00 PM";
+                break;
+            case 13:
+                TimeSelect = "5:00:00 PM";
+                break;
+            case 14:
+                TimeSelect = "5:30:00 PM";
+                break;
+            case 15:
+                TimeSelect = "6:30:00 PM";
+                break;            
+            default:
+                break; 
+        }  
+        bool Nothing = false;
+        PrintNotification(TimeSelect , ref Nothing);
+        Console.Write("please Enter for back to menu");
+        Console.ReadLine();
+        Console.Clear();
+        
     }
     static void PrintMenuScreen()
     {   
@@ -184,23 +287,22 @@ class Program {
         thread1.Start();
         thread2.Start();
         thread3.Start();
-
-        Console.Clear();
-        
     }
     static void CheckTime() {
-        while(true) {
+        bool IsTrueTime = false; 
+        while(IsTrueTime == false) {
 
-            string text = DateTime.Now.ToLongTimeString();
             //Thread.Sleep(1000);//เรียกต่อ1วินาที
-
-            PrintNontification(text, BM_BKT07_30, BM_BKT08_00, BM_BKT08_15, BM_BKT08_30, BM_BKT12_00, BM_BKT14_00
-            , BM_BKT16_00, BKT_BM07_00, BKT_BM10_00, BKT_BM13_00, BKT_BM15_00, BKT_BM16_30, BKT_BM17_00
-            , BKT_BM17_30, BKT_BM18_30);
+            string text = DateTime.Now.ToLongTimeString();
+            
+            PrintNotification(text, ref IsTrueTime);
         }
+        Thread.Sleep(10000);
+        PrintMenuScreen();
     }
     static void PrintFirstListMenu()
     {
+        Console.Clear();
         Console.WriteLine("Welcome to KMUTT Bus Booking");
         Console.WriteLine("*******************************************************");
         Console.WriteLine("1. Register");
@@ -208,23 +310,23 @@ class Program {
         Console.WriteLine("3. Select mockup time");
         Console.WriteLine("Any number to end this program.");
         Console.WriteLine("*******************************************************");
+        Console.Write("Please Input Menu: ");
     }
 
     static void PrintSecondListMenu()
     {
-        Console.WriteLine(Program.registerList.CurrentLogin.GetFullName());
-        Console.WriteLine("Welcome to KMUTT Bus Booking");
+        Console.WriteLine("Welcome : {0} => | KMUTT Bus Booking |",Program.registerList.CurrentLogin.GetFullName());
         Console.WriteLine("*******************************************************");
         Console.WriteLine("1. Register");
         Console.WriteLine("2. BangMod - BangKhunTien");
         Console.WriteLine("3. BangKhunTie - BangMod");
         Console.WriteLine("4. Logout");
         Console.WriteLine("*******************************************************");
+        Console.Write("Please Input Menu: ");
     }
 
     static void InputMenuFromKeyboard()
     {
-        Console.Write("Please Input Menu: ");
         Menu menu = (Menu)(int.Parse(Console.ReadLine())); 
 
         PresentMenu(menu);
@@ -232,7 +334,6 @@ class Program {
 
     static void InputMenuIIFromKeyboard()
     {
-        Console.Write("Please Input Menu: ");
         MenuII menuII = (MenuII)(int.Parse(Console.ReadLine())); 
 
         PresentMenu(menuII);
@@ -249,7 +350,10 @@ class Program {
             case Menu.Login:
                 Login();
                 break;
-
+            case Menu.MockupTime:
+                MockupTime();
+                PrintMenuScreen();
+                break;
             default:
                 break;
         }
@@ -289,51 +393,74 @@ class Program {
     public static void AddQueue(string TimeCheck, Info login) {
         switch (TimeCheck) {
             case "07:30" :
-                BM_BKT07_30.Push(login.GetFullName());
+                CheckTimeRegister(ref BM_BKT07_30, login);
                 break;
             case "08:00" :
-                BM_BKT08_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BM_BKT08_00, login);
                 break;
             case "08:15" :
-                BM_BKT08_15.Push(login.GetFullName());
+                CheckTimeRegister(ref BM_BKT08_15, login);
                 break;
             case "08:30" :
-                BM_BKT08_30.Push(login.GetFullName());
+                CheckTimeRegister(ref BM_BKT08_30, login);
                 break;
             case "12:00" :
-                BM_BKT12_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BM_BKT12_00, login);
                 break;
             case "14:00" :
-                BM_BKT14_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BM_BKT14_00, login);
                 break;
             case "16:00" :
-                BM_BKT16_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BM_BKT16_00, login);
                 break;
             case "07:00" :
-                BKT_BM07_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM07_00, login);
                 break;
             case "10:00" :
-                BKT_BM10_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM10_00, login);
                 break;
             case "13:00" :
-                BKT_BM13_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM13_00, login);
                 break;
             case "15:00" :
-                BKT_BM15_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM15_00, login);
                 break;
             case "16:30" :
-                BKT_BM16_30.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM16_30, login);
                 break;
             case "17:00" :
-                BKT_BM17_00.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM17_00, login);
                 break;
             case "17:30" :
-                BKT_BM17_30.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM17_30, login);
                 break;
             case "18:30" :
-                BKT_BM18_30.Push(login.GetFullName());
+                CheckTimeRegister(ref BKT_BM18_30, login);
                 break;
         }
+    }
+    public static void CheckTimeRegister(ref Queue<string> input, Info login) {
+        if(input.GetLength() != 0)
+            {
+                for(int roundNum = 0; roundNum <= input.GetLength() - 1; roundNum++)
+                {
+                    if(input.Get(roundNum) != login.GetFullName())
+                    {
+                        input.Push(login.GetFullName());
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.Write("You already register this time => Please enter to Go next");
+                        Console.ReadLine();
+                        BlackToMenuII();
+                    }
+                }
+            }
+        else
+        {
+            input.Push(login.GetFullName());
+       }
     }
     public static string ShowTimeBM_BKT()
     {   
@@ -428,11 +555,13 @@ class Program {
                 if (s == 1)
                 {
                     InputCollegeStudentInfoFromKeyboard();
+                    Console.Clear();
                     i++;
                 }
                 else if (s == 3)
                 {
                     InputTeacherInfoFromKeyboard();
+                    Console.Clear();
                     i++;
                 }
                 else
@@ -457,7 +586,6 @@ class Program {
         {
             Console.WriteLine("Try again. This email exist in system");
             Console.ReadLine();
-            PrintMenuScreen();
         }
     }
 
@@ -474,7 +602,6 @@ class Program {
         {
             Console.WriteLine("Try again. This email exist in system");
             Console.ReadLine();
-            PrintMenuScreen();
         }
     }
 
@@ -587,8 +714,4 @@ class Program {
             return null;             
         }
     }
-    public static void TimeCheck() { //รับค่า Person login
-        
-    }
-    
 }
