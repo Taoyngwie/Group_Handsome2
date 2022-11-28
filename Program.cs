@@ -204,6 +204,7 @@ class Program {
         }  
         bool Nothing = false;
         PrintNotification(TimeSelect , ref Nothing);
+        Console.WriteLine("***************************************************");
         Console.Write("please Enter for back to menu");
         Console.ReadLine();
         Console.Clear();
@@ -230,6 +231,7 @@ class Program {
             
             PrintNotification(text, ref IsTrueTime);
         }
+        Console.WriteLine("***************************************************");
         Thread.Sleep(10000);
         PrintMenuScreen();
     }
@@ -391,7 +393,7 @@ class Program {
             Console.ReadLine();
             BlackToMenuII();
         }
-        else
+        else if(input.GetLength() == 0)
         {
             input.Push(login.GetFullName());
        }
@@ -416,7 +418,7 @@ class Program {
             return "07:30";
         }
         else if(i == 2) {
-            return "08.00";
+            return "08:00";
         }
         else if(i == 3) {
             return "08:15";
