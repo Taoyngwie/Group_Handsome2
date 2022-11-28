@@ -1,0 +1,15 @@
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\bin\Debug\net6.0\develop_folder.exe
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\bin\Debug\net6.0\develop_folder.deps.json
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\bin\Debug\net6.0\develop_folder.runtimeconfig.json
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\bin\Debug\net6.0\develop_folder.dll
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\bin\Debug\net6.0\develop_folder.pdb
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.csproj.AssemblyReference.cache
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.AssemblyInfoInputs.cache
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.AssemblyInfo.cs
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.csproj.CoreCompileInputs.cache
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.dll
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\refint\develop_folder.dll
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.pdb
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\develop_folder.genruntimeconfig.cache
+C:\Users\zilfa\OneDrive\เดสก์ท็อป\Group_Handsome2\develop_folder\obj\Debug\net6.0\ref\develop_folder.dll
