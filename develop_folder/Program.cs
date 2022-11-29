@@ -4,7 +4,7 @@
 enum MenuII {
     BangModToBangKhunTien = 1, BangKhunTienToBangMod, Logout
 }
-class Program {
+public class Program {
     static RegisterInfoList registerList;
     static Info currentLogin;
     static Queue<string> BM_BKT07_30 = new Queue<string>();
@@ -31,7 +31,7 @@ class Program {
     }
     public static void PrintNotification(string text, ref bool IsTrueTime) {
 
-        if(text == "7:00:00 AM" ) { //บางขุน
+        if(text == "9:00:00 PM" ) { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 07:00:00 |*************");
@@ -383,7 +383,7 @@ class Program {
                 break;
         }
     }
-    public static void CheckTimeRegister(ref Queue<string> input, Info login) {
+    static void CheckTimeRegister(ref Queue<string> input, Info login) {
         if(input.GetLength() != 0 && input.GetLength() <= 30)
             {
                 for(int roundNum = 0; roundNum <= input.GetLength() - 1; roundNum++)

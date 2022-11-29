@@ -13,36 +13,6 @@ public class RegisterInfoList
     public void AddNewPerson(Info info)
     {
         this.registerInfoList.Add(info);
-        int num = 0;
-        num++;
-    }
-
-     public void FetchCollegeStudentList()
-    {
-        Console.WriteLine("List Student");
-        Console.WriteLine("***************************");
-
-        foreach(Info info in this.registerInfoList)
-        {
-            if(info is StudentInfo)
-            {
-                Console.WriteLine("1. {0} {1} {2}", info.GetTitle(), info.GetName(), info.GetLastName());
-            }
-        }
-    }
-
-    public void FetchTeacherList()
-    {
-        Console.WriteLine("List Teacher");
-        Console.WriteLine("***************************");
-
-        foreach(Info info in this.registerInfoList)
-        {
-            if(info is TeacherInfo)
-            {
-                Console.WriteLine("1. {0} {1} {2}", info.GetTitle(), info.GetName(), info.GetLastName());
-            }
-        }
     }
 
     public bool CheckLogin(string email, string password)
