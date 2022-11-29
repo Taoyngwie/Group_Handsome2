@@ -1,4 +1,4 @@
-class TeacherInfo: Info
+public class TeacherInfo: Info
 {
     private string email;
     private string password;

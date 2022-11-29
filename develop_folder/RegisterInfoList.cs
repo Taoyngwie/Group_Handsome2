@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class RegisterInfoList
+public class RegisterInfoList
 {
     private List<Info> registerInfoList;
 

@@ -36,90 +36,105 @@ class Program {
             Console.Clear();
             Console.WriteLine("*************| Time Table : 07:00:00 |*************");
             PrintQueue(ref BKT_BM07_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "7:30:00 AM") {
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 07:30:00 |*************");
             PrintQueue(ref BM_BKT07_30);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "8:00:00 AM") {
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 08:00:00 |*************");
             PrintQueue(ref BM_BKT08_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "8:15:00 AM") {
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 08:15:00 |*************");
             PrintQueue(ref BM_BKT08_15);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "8:30:00 AM") {
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 08:30:00 |*************");
             PrintQueue(ref BM_BKT08_30);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "10:00:00 AM") { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 10:00:00 |*************");
             PrintQueue(ref BKT_BM10_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "12:00:00 AM") {
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 12:00:00 |*************");
             PrintQueue(ref BM_BKT12_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "1:00:00 PM") { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 13:00:00 |*************");
             PrintQueue(ref BKT_BM13_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "2:00:00 PM") {
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 14:00:00 |*************");
             PrintQueue(ref BM_BKT14_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "3:00:00 PM") { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 15:00:00 |*************");
             PrintQueue(ref BKT_BM15_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "4:00:00 PM") {
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 16:00:00 |*************");
             PrintQueue(ref BM_BKT16_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "4:30:00 PM") { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 16:30:00 |*************");
             PrintQueue(ref BKT_BM16_30);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "5:00:00 PM") { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 17:00:00 |*************");
             PrintQueue(ref BKT_BM17_00);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "5:30:00 PM") { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 17:30:00 |*************");
             PrintQueue(ref BKT_BM17_30);
+            Console.WriteLine("***************************************************");
         }
         else if(text == "6:30:00 PM") { //บางขุน
             IsTrueTime = true;
             Console.Clear();
             Console.WriteLine("*************| Time Table : 18:30:00 |*************");
             PrintQueue(ref BKT_BM18_30);
+            Console.WriteLine("***************************************************");
         }
     }
     static void PrintQueue(ref Queue<string> Input) {
@@ -204,7 +219,6 @@ class Program {
         }  
         bool Nothing = false;
         PrintNotification(TimeSelect , ref Nothing);
-        Console.WriteLine("***************************************************");
         Console.Write("please Enter for back to menu");
         Console.ReadLine();
         Console.Clear();
@@ -231,6 +245,7 @@ class Program {
             
             PrintNotification(text, ref IsTrueTime);
         }
+        
         Thread.Sleep(10000);
         PrintMenuScreen();
     }

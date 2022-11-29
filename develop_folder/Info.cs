@@ -1,4 +1,4 @@
-class Info
+public class Info
 {
     private string title;
     private string name;
